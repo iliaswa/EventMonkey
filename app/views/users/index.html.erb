@@ -1,12 +1,17 @@
-<h1>Test</h1>
-<% @users.each do |user| %>
-<ol>
-  <li>
-  <p><strong>First Name: </strong> <%= user.first_name %></p>
-  <p><strong>Last Name: </strong> <%= user.last_name %></p>
-  <p><strong>Nickname: </strong> <%= user.handle %> </p>
-  <p><strong>Email: </strong> <%= user.email %></p>
-  <p>-------------------------------------------------------------</p>
-  </li>
-</ol>
-  <% end %>
+<div class="md:flex bg-white rounded-lg p-6">
+  <img class="h-16 w16 rounded-full mx-auto md:mx" src="https://ca.slack-edge.com/T02NE0241-U045SLXRG3E-32b80e782313-512" alt="Oona">
+  <div class="text-center">
+    <h1 class="text-lg" >Users</h1>
+      <% @users.each do |user| %>
+      <ol>
+        <li>
+          <p><strong>First Name: </strong> <%= user.first_name </p> %>
+          <p > <strong>Last Name: </strong> <%= user.last_name %></p>
+          <p><strong>Nickname: </strong> <%= user.handle %> </p>
+          <p><strong>Email: </strong> <%= user.email %></p>
+          <p>-------------------------------------------------------------</p>
+        </li>
+      </ol>
+      <% end %>
+  </div>
+</div> %>
