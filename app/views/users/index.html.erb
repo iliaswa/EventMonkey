@@ -2,7 +2,11 @@
 <% @users.each do |user| %>
 <ol>
   <li>
-  <%= user.firstname %> <%= user.lastname %> <%= user.email %> <%= user.handle %>
+  <p><strong>First Name: </strong> <%= user.first_name %></p>
+  <p><strong>Last Name: </strong> <%= user.last_name %></p>
+  <p><strong>Nickname: </strong> <%= user.handle %> </p>
+  <p><strong>Email: </strong> <%= user.email %></p>
+  <p>-------------------------------------------------------------</p>
   </li>
-  <% end %>
 </ol>
+  <% end %>
