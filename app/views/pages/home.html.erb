@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="img w-full">
+  <div>
+    <img src="https://i.postimg.cc/DwbtPj6b/Screen-Shot-2022-11-30-at-11-57-19-AM.png" class="w-full" />
+    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+    </div>
+
+  </div>
+</div>
+
+<% @events.each do |event| %>
+
+<div class="card card-compact w-96 bg-base-100 shadow-xl">
+  <figure><img src=<%= event.image_url %> alt="Shoes" /></figure>
+  <div class="card-body">
+    <h2 class="card-title"><%= event.name %></h2>
+    <h3><%= event.location %></h3>
+    <p><%= event.description %></p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+      <% end %>
+    </div>
+  </div>
+</div>

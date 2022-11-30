@@ -1,12 +1,25 @@
-<h1>Test</h1>
-<% @users.each do |user| %>
-<ol>
-  <li>
-  <p><strong>First Name: </strong> <%= user.first_name %></p>
-  <p><strong>Last Name: </strong> <%= user.last_name %></p>
-  <p><strong>Nickname: </strong> <%= user.handle %> </p>
-  <p><strong>Email: </strong> <%= user.email %></p>
-  <p>-------------------------------------------------------------</p>
-  </li>
-</ol>
+<div class="overflow-x-auto">
+  <table class="table table-zebra w-full">
+    <!-- head -->
+    <thead>
+  <div>
+    <h1><strong>Users</strong></h1>
+  </div>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Last Event</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.first_name %> <%= user.last_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.events.count > 0 ? user.events.last.name : "None" %></td>
+      </tr>
   <% end %>
+    </tbody>
+  </table>
+</div>
