@@ -1,25 +1,36 @@
-<div class="card w-96 bg-base-100 shadow-xl">
-  <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
+<div class="overflow-x-auto">
+  <table class="table table-zebra w-full">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Favorite Color</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+      <tr>
+        <th>1</th>
+        <td>Cy Ganderton</td>
+        <td>Quality Control Specialist</td>
+        <td>Blue</td>
+      </tr>
+      <!-- row 2 -->
+      <tr>
+        <th>2</th>
+        <td>Hart Hagerty</td>
+        <td>Desktop Support Technician</td>
+        <td>Purple</td>
+      </tr>
+      <!-- row 3 -->
+      <tr>
+        <th>3</th>
+        <td>Brice Swyre</td>
+        <td>Tax Accountant</td>
+        <td>Red</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
-
-
-
-<h1 class="ml-20">Users</h1>
-  <% @users.each do |user| %>
-  <ol>
-  <li>
-    <p><strong>First Name: </strong> <%= user.first_name %></p>
-    <p><strong>Last Name: </strong> <%= user.last_name %></p>
-    <p><strong>Nickname: </strong> <%= user.handle %> </p>
-    <p><strong>Email: </strong> <%= user.email %></p>
-    <p>-------------------------------------------------------------</p>
-  </li>
-  </ol>
-  <% end %>
