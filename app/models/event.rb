@@ -1,4 +1,4 @@
 class Event < ApplicationRecord
   has_many :favorites, dependent: :destroy
-  validates :name, :description, :location, :date_details, :price, :venue, :url, :category, :lng, :lat, presence: true
+  validates :name, :location, :date_details, :venue, :url, :category, presence: true
 end
