@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :favorites, dependent: :destroy
   has_many :groups
+  has_many :events, through: :favorites
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :handle, presence: true

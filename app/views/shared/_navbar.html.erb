@@ -1,6 +1,8 @@
 <div class="navbar bg-base-100">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">EventMonkey</a>
+    <%= link_to root_path do %>
+      <a class="btn btn-ghost normal-case text-xl">EventMonkey</a>
+    <% end %>
   </div>
   <div class="flex-none gap-2">
     <div class="form-control">
@@ -20,7 +22,9 @@
           </a>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <div>
+        <li <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %> ><a>Logout</a></li>
+        </div>
       </ul>
     </div>
   </div>

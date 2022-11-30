@@ -6,3 +6,18 @@
 
   </div>
 </div>
+
+<%= @events.each do |event| %>
+
+<div class="card card-compact w-96 bg-base-100 shadow-xl">
+  <figure><img src=<%= event.image_url %> alt="Shoes" /></figure>
+  <div class="card-body">
+    <h2 class="card-title"><%= event.name %></h2>
+    <h3><%= event.location %></h3>
+    <p><%= event.description %></p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+      <% end %>
+    </div>
+  </div>
+</div>
