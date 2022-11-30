@@ -1,6 +1,8 @@
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-100" id="navstick">
   <div class="flex-1">
-    <a class="btn btn-ghost normal-case text-xl">EventMonkey</a>
+    <%= link_to root_path do %>
+      <a class="btn btn-ghost normal-case text-xl">EventMonkey</a>
+    <% end %>
   </div>
   <div class="flex-none gap-2">
     <div class="form-control">
