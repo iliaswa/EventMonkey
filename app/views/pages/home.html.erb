@@ -7,6 +7,7 @@
   </div>
 </div>
 
+
 <% # The uniq function filters all events to just those that have unqiue names so that we don't show duplicates %>
 <% unique_events = @events.uniq { |event| [event.name] } %>
 <% trending_events = [] %>
@@ -71,6 +72,7 @@
           <a href="<%= event.url %>" target="_blank"class="btn btn-primary">Buy £<%= event.price.round %></a>
         </div>
       </div>
+
     </div>
 
     <% end %>

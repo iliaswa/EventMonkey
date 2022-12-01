@@ -1,0 +1,14 @@
+<% @events.each do |event| %>
+
+<div class="card card-compact w-96 bg-base-100 shadow-xl">
+  <figure><img src=https://thetempest.co/wp-content/uploads/2015/04/sitc-melanie-martinez-dollhouse-los-angeles-portrait-shoot-august-2014-photo-featured-1184x666-e1457918908392.jpg alt="Alternative photo" /></figure>
+  <div class="card-body">
+    <h2 class="card-title"><%= event.category %></h2>
+    <h3><%= event.location %></h3>
+    <p><%= event.description %></p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">Buy Now</button>
+      <% end %>
+    </div>
+  </div>
+</div>

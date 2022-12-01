@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
   def show
-    #this is a comment
+    @event = Event.find(params[:id])
   end
+
   def index
     @events = Event.all
   end
