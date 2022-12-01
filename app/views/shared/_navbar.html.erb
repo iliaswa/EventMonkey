@@ -1,11 +1,11 @@
-<div class="navbar bg-base-100" id="navstick">
+<div class="navbar bg-base-100 sticky top-0 z-50" id="navstick">
   <div class="flex-1">
     <%= link_to root_path do %>
       <a class="btn btn-ghost normal-case text-xl">EventMonkey</a>
     <% end %>
   </div>
   <div class="flex-none gap-2">
-    <div class="form-control">
+    <div class="form-control p-0.5 rounded-box">
       <input type="text" placeholder="Search" class="input input-bordered" />
     </div>
     <div class="dropdown dropdown-end">
