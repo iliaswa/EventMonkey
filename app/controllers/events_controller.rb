@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     @events = Event.all
     if params[:query].present?
       if params[:query].present?
-        sql_query = "name ILIKE :query OR venue ILIKE :query"
+        sql_query = "name ILIKE :query OR location ILIKE :query"
         @events = Event.where(sql_query, query: "%#{params[:query]}%")
       # @events = Event.global_search(params[:query])
       else
@@ -21,6 +21,8 @@ class EventsController < ApplicationController
         @events = Event.where(location: "London")
       elsif params[:location] == "Glasgow"
         @events = Event.where(location: "Glasgow")
+      elsif params[:location] == "Newcastle"
+        @events = Event.where(location: "Newcastle")
       # category
       elsif params[:category] == "Hip Hop"
         @events = Event.where(category: "Hip Hop")
