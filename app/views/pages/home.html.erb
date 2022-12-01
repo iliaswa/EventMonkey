@@ -10,6 +10,7 @@
 <% @events.each do |event| %>
 
 <div class="card card-compact w-96 bg-base-100 shadow-xl">
+<%= link_to root_path, class: 'no-decoration' do %>
   <figure><img src=<%= event.image_url %> alt="Shoes" /></figure>
   <div class="card-body">
     <h2 class="card-title"><%= event.name %></h2>
