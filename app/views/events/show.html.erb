@@ -5,7 +5,9 @@
       <h2 class="card-title text-2xl mb-2 text-center"><%= @event.name %></h2>
       <div class="bottom text-5xl d-flex justify-center space-x-4 flex items-stretch">
       <i class="fa-solid fa-heart" data-modal-toggle="defaultModal"></i>
+          <%= link_to @event.url do %>
       <button class="btn btn-primary">Buy Now</button>
+    <% end %>
       <div class="card-actions justify-end">
       </div>
       </div>
@@ -22,7 +24,7 @@
       <h3 class="card-line  text-2xl font-semibold"><%= @event.date_details.strftime("%d %B %Y")%>
       <h3 class="card-line py-5 text-2xl font-semibold"><%= @event.date_details.strftime("%l:%M%P") %>
       <p class="card-line py-2 text-2xl font-semibold"><%= @event.category %></p>
-      <p class="card-line py-2 text-2xl font-semibold"> <%= @event.price %> GBP</p>
+      <p class="card-line py-2 text-2xl font-semibold"> <%= @event.price.round %> GBP</p>
 
       <div class="card-actions justify-end">
       </div>
