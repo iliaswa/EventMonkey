@@ -1,8 +1,8 @@
-<div class="container flex items-stretch p-3">
+<div class="container flex items-stretch p-3 ">
   <div class="card card-compact w-96 bg-base-100 shadow-l flex justify-center w-half h-full">
-    <figure><img src=<%= @event.image_url %> class="w-9/12 p-2 rounded-2xl"></figure>
+    <figure><img src=<%= @event.image_url %> class="w-full p-3 rounded-3xl"></figure>
     <div class="card-body justify-center">
-      <h2 class="card-title p-2"><%= @event.name %></h2>
+      <h2 class="card-title text-2xl mb-2 text-center"><%= @event.name %></h2>
       <div class="bottom text-5xl d-flex justify-center space-x-4 flex items-stretch">
       <i class="fa-solid fa-heart" data-modal-toggle="defaultModal"></i>
       <button class="btn btn-primary">Buy Now</button>
@@ -10,15 +10,19 @@
       </div>
       </div>
     </div>
+
   </div>
 
    <div class="container">
     <div class="card w-96 bg-base-100 shadow-l flex-col px-5 w-full h-full p-2">
-      <h1 class="card-title text-3xl border-bottom border-color-mt-2"><%= @event.name %></h1>
-      <h2 class="card-line py-3 text-2xl"><%= @event.location %></h2>
-      <h3 class="card-line py-2 text-xl"><%= @event.date_details %>
-      <p class="card-line py-2 text-xl"><%= @event.category %></p>
-      <p class="card-line py-2 text-xl"> <%= @event.price %> GBP</p>
+      <h1 class="card-title text-4xl border-bottom"><%= @event.name %></h1>
+      <h2 class="card-line py-2 text-3xl font-semibold"><%= @event.venue %></h2>
+      <h2 class="card-line py-1 text-2xl font-medium"><%= @event.location %></h2>
+
+      <h3 class="card-line  text-2xl font-semibold"><%= @event.date_details.strftime("%d %B %Y")%>
+      <h3 class="card-line py-5 text-2xl font-semibold"><%= @event.date_details.strftime("%l:%M%P") %>
+      <p class="card-line py-2 text-2xl font-semibold"><%= @event.category %></p>
+      <p class="card-line py-2 text-2xl font-semibold"> <%= @event.price %> GBP</p>
 
       <div class="card-actions justify-end">
       </div>
@@ -27,7 +31,7 @@
 </div>
 
 <!-- Main modal -->
-<div id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+<div id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-half p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
     <div class="relative w-full h-full max-w-2xl md:h-auto">
         <!-- Modal content -->
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -42,15 +46,15 @@
                 </button>
             </div>
             <!-- Modal body -->
-            <div class="p-6 space-y-6">
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    Add <%=@event.name%> to your Favorites.
+            <div class="p-6 space-y-6 bg-zinc-800">
+                <p class="text-base leading-relaxed text-white dark:text-gray-400">
+                    Add "<%=@event.name%>" to your Favorites.
                 </p>
             </div>
             <!-- Modal footer -->
-            <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                <button data-modal-toggle="defaultModal" type="button" class="text-white bg-violet-500 hover:bg-570D58 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Confirm</button>
-                <button data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
+            <div class="d-flex justify-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <button data-modal-toggle="defaultModal" type="button" class="text-white bg-violet-400 hover:bg-570D58 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Confirm</button>
+                <button data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-bold px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
             </div>
         </div>
     </div>
