@@ -13,13 +13,15 @@
     <% # These lines below are for DaisyUI which is a Tailwind CSS component library%>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.42.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
 
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
+  <body>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
     <%= yield %>
-    <body><%= render "shared/footer" %>
+    <%= render "shared/footer" %>
+    <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
   </body>
 </html>
