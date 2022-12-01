@@ -1,52 +1,80 @@
 
 
 <div class="container mb-8">
+  <div class=<%= (params[:query].present? || params[:location].present? || params[:category].present?) ? "hidden" : "" %>>
+    <h1 class="text-5xl font-bold mt-4">All Events</h1>
 
-<h1 class="text-5xl font-bold mt-4">All Events</h1>
+    <div class="grid grid-cols-4 gap-4">
 
-  <div class="grid grid-cols-4 gap-4">
+      <a href="/events?category=alternative" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
+        <figure><img src="https://f4.bcbits.com/img/0022450678_0" class="" /></figure>
+        <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Alternative</h2>
+      </a>
 
-    <a href="/events?category=alternative" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
-      <figure><img src="https://f4.bcbits.com/img/0022450678_0" class="" /></figure>
-      <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Alternative</h2>
-    </a>
+      <a href="/events?category=rock" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
+        <figure><img src="https://thelistwire.usatoday.com/wp-content/uploads/sites/99/2021/09/USATSI_15747709.jpg?w=1000&h=600&crop=1" class="" /></figure>
+        <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Rock</h2>
+      </a>
 
-    <a href="/events?category=rock" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
-      <figure><img src="https://thelistwire.usatoday.com/wp-content/uploads/sites/99/2021/09/USATSI_15747709.jpg?w=1000&h=600&crop=1" class="" /></figure>
-      <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Rock</h2>
-    </a>
+      <a href="/events?category=hip hop" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
+        <figure><img src="https://pyxis.nymag.com/v1/imgs/c43/0b1/19a6bc7cb4a911338c16a4465fac6c3a92-feature-lede-rap-final.jpg" class="" /></figure>
+        <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Hip Hop</h2>
+      </a>
 
-    <a href="/events?category=hip hop" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
-      <figure><img src="https://pyxis.nymag.com/v1/imgs/c43/0b1/19a6bc7cb4a911338c16a4465fac6c3a92-feature-lede-rap-final.jpg" class="" /></figure>
-      <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Hip Hop</h2>
-    </a>
+      <a href="/events?category=sports" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
+        <figure><img src="https://d1e00ek4ebabms.cloudfront.net/production/420e7555-72a1-4843-8326-26e602b3700e.jpg" class="" /></figure>
+        <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Sports</h2>
+      </a>
 
-    <a href="/events?category=sports" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
-      <figure><img src="https://d1e00ek4ebabms.cloudfront.net/production/420e7555-72a1-4843-8326-26e602b3700e.jpg" class="" /></figure>
-      <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Sports</h2>
-    </a>
+      <a href="/events?category=pop" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
+        <figure><img src="https://www.billboard.com/wp-content/uploads/2020/12/alternative-bb19-2020-billboard-1548-1608052688.jpg" class="" /></figure>
+        <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Pop</h2>
+      </a>
 
-    <a href="/events?category=pop" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
-      <figure><img src="https://www.billboard.com/wp-content/uploads/2020/12/alternative-bb19-2020-billboard-1548-1608052688.jpg" class="" /></figure>
-      <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Pop</h2>
-    </a>
+      <a href="/events?category=country" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
+        <figure><img src="https://musicindustryhowtoimages.s3.amazonaws.com/wp-content/uploads/2022/01/23032435/Characteristics-of-Country-Music.jpg" class="" /></figure>
+        <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Country</h2>
+      </a>
 
-    <a href="/events?category=country" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
-      <figure><img src="https://musicindustryhowtoimages.s3.amazonaws.com/wp-content/uploads/2022/01/23032435/Characteristics-of-Country-Music.jpg" class="" /></figure>
-      <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Country</h2>
-    </a>
+      <a href="/events?category=rnb" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
+        <figure><img src="https://images.squarespace-cdn.com/content/v1/581e0a05be659448b76fff35/1579277353998-SBVU7C70HYV4UU7L38T2/over+it.jpg" class="" /></figure>
+        <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">RnB</h2>
+      </a>
 
-    <a href="/events?category=rnb" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
-      <figure><img src="https://images.squarespace-cdn.com/content/v1/581e0a05be659448b76fff35/1579277353998-SBVU7C70HYV4UU7L38T2/over+it.jpg" class="" /></figure>
-      <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">RnB</h2>
-    </a>
-
-    <a href="/events?category=jazz" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
-      <figure><img src="https://www.udiscovermusic.com/wp-content/uploads/2021/11/Louis-Armstrong-GettyImages-964102851.jpg" class="" /></figure>
-      <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Jazz</h2>
-    </a>
-
+      <a href="/events?category=jazz" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
+        <figure><img src="https://www.udiscovermusic.com/wp-content/uploads/2021/11/Louis-Armstrong-GettyImages-964102851.jpg" class="" /></figure>
+        <h2 class="card-body justify-center content-center items-center place-content-center text-3xl font-bold mt-4 mb-6 text-white">Jazz</h2>
+      </a>
+    </div>
   </div>
+
+
+
+
+
+  <div class=<%= (params[:query].present? || params[:location].present? || params[:category].present?) ? "" : "hidden" %>>
+    <div class="container">
+    <h1 class="text-5xl font-bold mt-4 mb-6 m">Events you may like...</h1>
+
+      <% if @events.empty? %>
+        <h1>Sorry there are no results for this search... Please search for a city or event name 🤪 </h1>
+        <% end %>
+      <% @events.each do |event| %>
+
+    <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
+        <figure><img src=<%= event.image_url %> class="w-full" /></figure>
+        <div class="card-body">
+          <h2 class="card-title"><%= event.name.truncate(35) %>
+          <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%>/<%= event.date_details.year%></h3>
+          <div class="card-actions justify-end">
+            <a href="<%= event.url %>" target="_blank"class="btn btn-primary">Buy £<%= event.price.round %></a>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 </div>
 
