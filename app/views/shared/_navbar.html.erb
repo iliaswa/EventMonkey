@@ -28,15 +28,19 @@
       </label>
       <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
 
-           <li><%= link_to events_path(location: "London") do %>
-      <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i>London</li><%end%>
-          </a>
+        <li><%= link_to events_path(location: "Birmingham") do %>
+      <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i> Birmingham</li><%end%>
 
         <li><%= link_to events_path(location: "Glasgow") do %>
       <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i>Glasgow</li><%end%>
 
-        <li><%= link_to events_path(location: "Birmingham") do %>
-      <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i> Birmingham</li><%end%>
+           <li><%= link_to events_path(location: "London") do %>
+      <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i>London</li><%end%>
+          </a>
+
+          <li><%= link_to events_path(location: "Newcastle") do %>
+      <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i> Newcastle</li><%end%>
+
       </ul>
     </div>
     <%# location button end %>
@@ -77,8 +81,17 @@
 
     <%# Profile dropdown start %>
         <div class="form-control p-0.5 rounded-box">
-      <input type="text" placeholder="Find Event..." class="input input-bordered" />
+        <%= form_with url: events_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "input input-bordered",
+    placeholder: "Find event..."
+  %>
+  <% end %>
+
+      <%# <input type="text" placeholder="Find Event..." class="input input-bordered" /> %>
     </div>
+
     <div class="dropdown dropdown-end">
       <label tabindex="0" class="btn btn-ghost btn-circle avatar">
         <div class="w-10 rounded-full">
