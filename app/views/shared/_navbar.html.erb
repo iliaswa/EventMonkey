@@ -1,6 +1,7 @@
 <div class="navbar bg-base-100 sticky top-0 z-50" id="navstick">
   <div class="flex-1">
     <%= link_to root_path do %>
+
       <button class="btn btn-ghost normal-case text-xl">EventMonkey</button>
     <% end %>
   </div>
@@ -38,8 +39,8 @@
       <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i>London</li><%end%>
           </a>
 
-          <li><%= link_to events_path(location: "Newcastle") do %>
-      <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i> Newcastle</li><%end%>
+          <li><%= link_to events_path(location: "Newcastle Upon Tyne") do %>
+      <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i> Newcastle Upon Tyne</li><%end%>
 
       </ul>
     </div>
@@ -79,6 +80,11 @@
       <%# Music Drop down button %>
 
 
+      <%# sports icon %>
+
+      <%# sports icon %>
+
+
     <%# Profile dropdown start %>
         <div class="form-control p-0.5 rounded-box">
         <%= form_with url: events_path, method: :get, class: "d-flex" do %>
@@ -108,6 +114,5 @@
       </ul>
     </div>
     <%# Profile dropdown end  %>
-
   </div>
 </div>

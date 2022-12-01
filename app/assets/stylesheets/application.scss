@@ -10,3 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+#no-tint::before {
+  background-color: rgba(0, 0, 0, 0.35) !important;
+}

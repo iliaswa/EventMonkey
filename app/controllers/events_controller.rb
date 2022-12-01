@@ -21,8 +21,8 @@ class EventsController < ApplicationController
         @events = Event.where(location: "London")
       elsif params[:location] == "Glasgow"
         @events = Event.where(location: "Glasgow")
-      elsif params[:location] == "Newcastle"
-        @events = Event.where(location: "Newcastle")
+      elsif params[:location] == "Newcastle Upon Tyne"
+        @events = Event.where(location: "Newcastle Upon Tyne")
       # category
       elsif params[:category] == "Hip Hop"
         @events = Event.where(category: "Hip Hop")
