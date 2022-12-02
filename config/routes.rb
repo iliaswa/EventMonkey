@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :events, only: [:show, :index ] do
     resources :favorites, only: [:index, :show, :new, :create, :destroy]
   end
+
+  get "events/:id/add_favorites", to: "favorites#add_favorites", as: :add_favorites
 end

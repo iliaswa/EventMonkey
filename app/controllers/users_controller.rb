@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 
   def show
+    @favorites_join = current_user.favorites
+    @favorites = @favorites_join.map do |favorite|
+      favorite.event
+    end
   end
 
   def index
