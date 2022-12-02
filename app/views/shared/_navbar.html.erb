@@ -1,6 +1,7 @@
 <div class="navbar bg-base-100 sticky top-0 z-50" id="navstick">
   <div class="flex-1">
     <%= link_to root_path do %>
+
       <button class="btn btn-ghost normal-case text-xl">EventMonkey</button>
     <% end %>
   </div>
@@ -45,6 +46,22 @@
     </div>
     <%# location button end %>
 
+<%# sport icon  %>
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost">
+            <div class="text-3xl">
+            <i class="fa-solid fa-trophy"></i>
+            </div>
+          </label>
+          <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+
+          <li><%= link_to events_path(category: "Sports") do %>
+          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i>Sports</li><%end%>
+
+          </ul>
+        </div>
+    <%# sport icon %>
+
     <%# Music Drop down button start %>
     <div class="dropdown dropdown-end">
           <label tabindex="0" class="btn btn-ghost">
@@ -69,19 +86,11 @@
           <li><%= link_to events_path(category: "Rock") do %>
           <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i> Rock</li><%end%>
 
-            <li><%= link_to events_path(category: "Sports") do %>
-          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i>Sports</li><%end%>
-
           <li><%= link_to events_path(category: "RnB") do %>
           <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i>RnB</li><%end%>
           </ul>
         </div>
       <%# Music Drop down button %>
-
-
-      <%# sports icon %>
-
-      <%# sports icon %>
 
 
     <%# Profile dropdown start %>
