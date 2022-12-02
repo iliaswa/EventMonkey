@@ -9,7 +9,7 @@
               <div class="image overflow-hidden"></div>
 
               <h1 class="text-gray-900 font-bold text-xl leading-8 my-1 text-center"><%= current_user.first_name %></h1>
-              <img class="h-16 w-16 rounded-full mx-auto" src="https://placeimg.com/192/192/people">
+              <img class="h-16 w-16 rounded-full mx-auto" src="https://i.ibb.co/SByn8Gx/Screen-Shot-2022-12-02-at-12-05-29-PM.png">
               <ul
                   class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
                   <li class="flex items-center py-3">
@@ -42,25 +42,19 @@
                       <img class="h-16 w-16 rounded-full mx-auto"
                           src="https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG11c2ljJTIwZXZlbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
                           alt="">
-                      <a href="#" class="text-main-color">event x</a>
+                      <a href="#" class="text-main-color">Enzo</a>
                   </div>
                   <div class="text-center my-2">
                       <img class="h-16 w-16 rounded-full mx-auto"
                           src="https://plus.unsplash.com/premium_photo-1663047192589-dacd18636fea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
                           alt="">
-                      <a href="#" class="text-main-color">event y</a>
+                      <a href="#" class="text-main-color">Runtee</a>
                   </div>
                   <div class="text-center my-2">
                       <img class="h-16 w-16 rounded-full mx-auto"
                           src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG11c2ljJTIwZXZlbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
                           alt="">
-                      <a href="#" class="text-main-color">event z</a>
-                  </div>
-                  <div class="text-center my-2">
-                      <img class="h-16 w-16 rounded-full mx-auto"
-                          src="https://bucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com/public/images/f04b52da-12f2-449f-b90c-5e4d5e2b1469_361x361.png"
-                          alt="">
-                      <a href="#" class="text-main-color">event a</a>
+                      <a href="#" class="text-main-color">Ella Prita</a>
                   </div>
               </div>
           </div>
@@ -92,29 +86,26 @@
                                 <div class="px-4 py-2"><%= current_user.last_name %></div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Nickname:</div>
-                                <div class="px-4 py-2"><%= current_user.handle %></div>
+                                <div class="px-4 py-2 font-semibold">Handle:</div>
+                                <div class="px-4 py-2">@<%= current_user.handle %></div>
                             </div>
                              <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Birthday:</div>
                                 <div class="px-4 py-2">Feb 06, 1998</div>
                             </div>
                             </div>
-                            <div class="grid grid-cols-2">
+                            <div class="grid grid-cols-4">
                                 <div class="px-4 py-4 font-semibold">Email:</div>
                                 <div class="px-4 py-4">
                                     <a class="text-blue-800" href="mailto:"#{current_user.email}><%= current_user.email %></a>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-2">
+                            <div class="grid grid-cols-4">
                                 <div class="px-4 py-2 font-semibold">Contact No:</div>
                                 <div class="px-4 py-2">+44 7967961658</div>
                             </div>
                         </div>
                     </div>
-                    <button
-                        class="block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">Show
-                        Full Information</button>
                 </div>
                 <!-- End of about section -->
 

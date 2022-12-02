@@ -46,27 +46,11 @@
     </div>
     <%# location button end %>
 
-<%# sport icon  %>
-        <div class="dropdown dropdown-end">
-          <label tabindex="0" class="btn btn-ghost">
-            <div class="text-3xl">
-            <i class="fa-solid fa-trophy"></i>
-            </div>
-          </label>
-          <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-
-          <li><%= link_to events_path(category: "Sports") do %>
-          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i>Sports</li><%end%>
-
-          </ul>
-        </div>
-    <%# sport icon %>
-
     <%# Music Drop down button start %>
     <div class="dropdown dropdown-end">
           <label tabindex="0" class="btn btn-ghost">
             <div class="text-3xl">
-            <i class="fa-solid fa-music"></i>
+            <i class="fa-solid fa-filter"></i>
             </div>
           </label>
           <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -74,20 +58,27 @@
           <li><%= link_to events_path(category: "Alternative") do %>
           <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i> Alternative</li><%end%>
 
-            <li><%= link_to events_path(category: "Country") do %>
-          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i> Country</li><%end%>
+          <li><%= link_to events_path(category: "Rock") do %>
+          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i> Rock</li><%end%>
 
-              <li><%= link_to events_path(category: "Jazz") do %>
-          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i>Jazz</li><%end%>
+          <li><%= link_to events_path(category: "Hip Hop") do %>
+          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i> Hip Hop</li><%end%>
 
           <li><%= link_to events_path(category: "Pop") do %>
           <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i> Pop</li><%end%>
 
-          <li><%= link_to events_path(category: "Rock") do %>
-          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i> Rock</li><%end%>
+          <li><%= link_to events_path(category: "Country") do %>
+          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i> Country</li><%end%>
 
-          <li><%= link_to events_path(category: "RnB") do %>
-          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i>RnB</li><%end%>
+          <li><%= link_to events_path(category: "R&B") do %>
+          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i> RnB</li><%end%>
+
+          <li><%= link_to events_path(category: "Jazz") do %>
+          <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i> Jazz</li><%end%>
+
+          <li><%= link_to events_path(category: "Sports") do %>
+          <i class="fa-solid fa-trophy <%= "selected" if params[:category] %>" id="local"></i> Sports</li><%end%>
+
           </ul>
         </div>
       <%# Music Drop down button %>
@@ -109,7 +100,7 @@
     <div class="dropdown dropdown-end">
       <label tabindex="0" class="btn btn-ghost btn-circle avatar">
         <div class="w-10 rounded-full">
-          <img src="https://placeimg.com/192/192/people" />
+          <img src="https://variety.com/wp-content/uploads/2021/09/Drake-publicity2-2021.jpg" />
         </div>
       </label>
       <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
