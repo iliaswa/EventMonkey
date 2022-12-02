@@ -55,7 +55,7 @@
   <div class=<%= (params[:query].present? || params[:location].present? || params[:category].present?) ? "" : "hidden" %>>
     <div class="container">
       <h1 class="text-4xl sticky font-bold mt-8 ">Events you may like...</h1>
-      <div class="grid grid-rows-4 grid-flow-col gap-4">
+      <div class="grid grid-cols-3">
 
       <% if @events.empty? %>
         <h1 class="mt-6">Sorry there are no results for this search... Please search for a city or event name 🤪 </h1>
