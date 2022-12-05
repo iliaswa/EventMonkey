@@ -18,9 +18,9 @@
 <% jazz_events = [] %>
 <% unique_events.each_with_index do |event, index| %>
   <% # I filtered the results for each category and used things like price to get a better set of results to show off%>
-  <% if event.category == "Hip Hop" && event.price > 15 && event.price < 90 %>
+  <% if event.category == "Hip Hop" && event.price > 15 && event.price < 90 && event.location != "Glasgow" %>
   <% trending_events << event %>
-  <% elsif event.category == "R&B" && event.price < 30 %>
+  <% elsif event.category == "R&B" && event.price < 30 && event.name != "Dexter" && event.name != "Kenny Thomas" && event.location != "Manchester" && event.name != "Kenny Thomas" %>
   <% rnb_events << event %>
   <% elsif event.category == "Sports" && event.price > 0  %>
   <% sports_events << event %>
@@ -47,7 +47,7 @@
       <figure><img src=<%= event.image_url %> class="w-full" /></figure>
       <div class="card-body">
         <% # Truncate function reduces the length of the name if its longer than 10 characters %>
-        <h2 class="card-title"><%= event.name.truncate(10) %>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
         <div class="badge badge-secondary">NEW</div></h2>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
@@ -63,7 +63,7 @@
 </div>
 
 <div class="container">
-  <h1 class="text-5xl font-bold mt-4 mb-6 m">R&B Events</h1>
+  <h1 class="text-5xl font-bold mt-4 mb-6 m">RnB Events</h1>
   <div class="flex flex-row">
 
   <% rnb_events.each_with_index do |event, index| %>
@@ -72,7 +72,7 @@
     <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-full" /></figure>
       <div class="card-body">
-        <h2 class="card-title"><%= event.name.truncate(10) %>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
           <a href="<%= event.url %>" target="_blank"class="btn btn-primary">Buy £<%= event.price.round %></a>
@@ -97,31 +97,7 @@
     <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-full" /></figure>
       <div class="card-body">
-        <h2 class="card-title"><%= event.name.truncate(10) %>
-        <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
-        <div class="card-actions justify-end">
-          <a href="<%= event.url %>" target="_blank"class="btn btn-primary">Buy £<%= event.price.round %></a>
-        </div>
-      </div>
-    </div>
-
-    <% end %>
-  <% end %>
-
-  </div>
-</div>
-
-<div class="container">
-  <h1 class="text-5xl font-bold mt-4 mb-6 m">Alternative Events</h1>
-  <div class="flex flex-row">
-
-  <% alternative_events.each_with_index do |event, index| %>
-    <% if index < 4 %>
-
-    <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
-      <figure><img src=<%= event.image_url %> class="w-full" /></figure>
-      <div class="card-body">
-        <h2 class="card-title"><%= event.name.truncate(10) %>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
           <a href="<%= event.url %>" target="_blank"class="btn btn-primary">Buy £<%= event.price.round %></a>
@@ -145,7 +121,7 @@
     <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-full" /></figure>
       <div class="card-body">
-        <h2 class="card-title"><%= event.name.truncate(10) %>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
           <a href="<%= event.url %>" target="_blank"class="btn btn-primary">Buy £<%= event.price.round %></a>
@@ -161,4 +137,5 @@
 
 <div class="flex justify-center">
   <%= link_to "Explore All", events_path, class: "btn btn-wide text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 my-14"%>
+  <a class="btn btn-wide text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 my-14" href="/events">Explore All</a>
 </div>

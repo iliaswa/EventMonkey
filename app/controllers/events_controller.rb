@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :show, :index ]
   def show
     @event = Event.find(params[:id])
   end
@@ -38,8 +39,8 @@ class EventsController < ApplicationController
         @events = Event.where(category: "Pop")
       elsif params[:category] == "Rock"
         @events = Event.where(category: "Rock")
-      elsif params[:category] == "RnB"
-        @events = Event.where(category: "RnB")
+      elsif params[:category] == "R&B"
+        @events = Event.where(category: "R&B")
 
       end
     end
