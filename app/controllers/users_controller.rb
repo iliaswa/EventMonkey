@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def show
+    @favorited_events = current_user.favorites.map(&:event)
   end
 
   def index
