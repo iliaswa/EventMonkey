@@ -25,6 +25,17 @@ class FavoritesController < ApplicationController
     redirect_to favorites_path, status: :see_other
   end
 
+  def add_favorites
+    @event = Event.find(params[:id])
+    if current_user.favorites.where(event_id: @event.id).empty?
+      @favorite = Favorite.new
+      @favorite.user = current_user
+      @favorite.event = @event
+      @favorite.save!
+    end
+    redirect_to event_path(@event)
+  end
+
   private
 
   def set_user
