@@ -42,9 +42,11 @@
         <li><%= link_to events_path(location: "Glasgow") do %>
       <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i>Glasgow</li><%end%>
 
-           <li><%= link_to events_path(location: "London") do %>
+        <li><%= link_to events_path(location: "London") do %>
       <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i>London</li><%end%>
-          </a>
+
+        <li><%= link_to events_path(location: "Manchester") do %>
+      <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i> Manchester</li><%end%>
 
           <li><%= link_to events_path(location: "Newcastle Upon Tyne") do %>
       <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i> Newcastle Upon Tyne</li><%end%>
