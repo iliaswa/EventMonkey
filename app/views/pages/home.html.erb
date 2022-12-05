@@ -49,7 +49,7 @@
       <figure><img src=<%= event.image_url %> class="w-full" /></figure>
       <div class="card-body">
         <% # Truncate function reduces the length of the name if its longer than 10 characters %>
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
         <div class="badge badge-secondary">NEW</div></h2>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
@@ -74,7 +74,7 @@
     <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-full" /></figure>
       <div class="card-body">
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
 
@@ -99,7 +99,7 @@
     <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-full" /></figure>
       <div class="card-body">
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
 
@@ -123,7 +123,7 @@
     <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-full" /></figure>
       <div class="card-body">
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
 
