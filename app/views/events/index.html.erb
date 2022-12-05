@@ -54,7 +54,7 @@
 
   <div class=<%= (params[:query].present? || params[:location].present? || params[:category].present?) ? "" : "hidden" %>>
     <div class="container yeah">
-      <h1 class="text-4xl sticky font-bold mt-8 ">Events you may like...</h1>
+      <h1 class="text-4xl sticky font-bold mt-8 mb-8">Events you may like...</h1>
       <div class="grid grid-cols-3">
 
       <% if @events.empty? %>
@@ -63,7 +63,7 @@
 
       <% @events.each do |event| %>
 
-          <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
+          <div class="card card-compact w-90 h-80 bg-base-100 shadow-xl mx-4 my-2">
             <figure><img src=<%= event.image_url %> class="w-full" /></figure>
             <div class="card-body">
               <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
