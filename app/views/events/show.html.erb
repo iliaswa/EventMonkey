@@ -5,15 +5,27 @@
       <h2 class="card-title text-2xl mb-2 text-center"><%= @event.name %></h2>
       <div class="bottom text-5xl d-flex justify-center space-x-4 flex items-stretch">
       <i class="fa-solid fa-heart" data-modal-toggle="defaultModal"></i>
-          <%= link_to @event.url do %>
-      <button class="btn btn-primary">Buy Now</button>
-    <% end %>
-      <div class="card-actions justify-end">
+
+      <button class='btn btn-primary', id="pay">Purchase</button>
       </div>
+
+      <script src="https://js.stripe.com/v3/"></script>
+      <script>
+        paymentButton = document.getElementById('pay');
+        paymentButton.addEventListener('click', () => {
+          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+          stripe.redirectToCheckout({
+            sessionId: '<%= @event.checkout_session_id %>'
+        });
+      });
+      </script>
+
+
+    <div class="card-actions justify-end">
+    </div>
       </div>
     </div>
 
-  </div>
 
    <div class="container">
     <div class="card w-96 bg-base-100 shadow-l flex-col px-5 w-full h-full p-2">
@@ -24,11 +36,12 @@
       <h3 class="card-line  text-2xl font-semibold"><%= @event.date_details.strftime("%d %B %Y")%>
       <h3 class="card-line py-5 text-2xl font-semibold"><%= @event.date_details.strftime("%l:%M%P") %>
       <p class="card-line py-2 text-2xl font-semibold"><%= @event.category %></p>
-      <p class="card-line py-2 text-2xl font-semibold"> <%= @event.price.round %> GBP</p>
+      <p class="card-line py-2 text-2xl font-semibold"> <%= @event.price.round(3) %> GBP</p>
 
       <div class="card-actions justify-end">
       </div>
     </div>
+  </div>
   </div>
 </div>
 
