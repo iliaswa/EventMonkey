@@ -63,16 +63,15 @@
               <!-- Modal body -->
               <div class="p-6 space-y-6 bg-zinc-800">
                   <p class="text-base leading-relaxed text-white dark:text-gray-400">
-                      Add "<%=@event.name%>" to your Favorites.
+                      Add "<%=@event.name%>" to your favorites?
                   </p>
               </div>
               <!-- Modal footer -->
               <div class="d-flex justify-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
                   <%= link_to add_favorites_path(@event) do %>
-                    <button>Test</button>
+                    <button data-favorites-target="favorite" data-action="click->favorites#update" class="btn bg-blue-500 hover:bg-blue-700 text-white">Confirm</button>
                   <% end %>
-                  <button data-modal-toggle="defaultModal" data-favorites-target="favorite" data-action="click->favorites#update" type="button" class="text-white bg-violet-400 hover:bg-570D58 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Confirm</button>
-                  <button data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-bold px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
+                  <button data-modal-toggle="defaultModal" class="btn text-white">Decline</button>
               </div>
           </div>
       </div>
