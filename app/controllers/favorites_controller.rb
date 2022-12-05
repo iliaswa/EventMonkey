@@ -1,12 +1,21 @@
 class FavoritesController < ApplicationController
   before_action :set_favorite, only: [:show, :edit, :update, :destroy]
-  before_action :set_user, only: [:new, :create]
+  before_action :set_user, only: [:new, :create, :show, :index]
 
   def index
-    @favorites = Favorite.all
+    @events = []
+    @favorites = @user.favorites
+    @favorites.each do |favorite|
+      @events << favorite.event
+    end
   end
 
   def show
+    @events = []
+    @favorites = @user.favorites
+    @favorites.each do |favorite|
+      @events << (favorite.event)
+    end
   end
 
   def new
