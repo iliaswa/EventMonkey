@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index ] do
     resources :groups, only: [:show, :new, :create, :destroy ]
   end
+
   resources :events, only: [:show, :index ] do
-    resources :favorites, only: [:index, :show, :new, :create, :destroy]
+  end
+
+  resources :favorites, only: [:index, :show, :new, :create, :destroy] do
   end
 
   resources :orders, only: [:show, :create] do
