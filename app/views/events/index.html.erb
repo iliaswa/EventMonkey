@@ -54,7 +54,13 @@
 
   <div class=<%= (params[:query].present? || params[:location].present? || params[:category].present?) ? "" : "hidden" %>>
     <div class="container yeah">
-      <h1 class="text-4xl sticky font-bold mt-8 mb-8">Events you may like...</h1>
+      <h1 class="text-4xl sticky font-bold mt-8 mb-8">
+      <%  if params[:category]  %>
+      <p class="mt-6 text 6xl mb-10 "> <%= params[:category] %> events you may like...</p>
+      <% else %>
+      <p class="mt-6 text 6xl mb-10"> Events in <%= params[:location]%>...  </p>
+      <% end %>
+
       <div class="grid grid-cols-3">
 
       <% if @events.empty? %>
@@ -79,4 +85,4 @@
   </div>
 </div>
 
-<%# <% # genres = ["Alternative", "Hip Hop", "Country", "R&B", "Jazz", "Sports", "Pop", "Rock"] %>
+<% # genres = ["Alternative", "Hip Hop", "Country", "R&B", "Jazz", "Sports", "Pop", "Rock"]

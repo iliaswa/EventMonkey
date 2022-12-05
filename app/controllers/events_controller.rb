@@ -44,6 +44,8 @@ class EventsController < ApplicationController
         @events = Event.where(location: "London").order(date_details: "ASC")
       elsif params[:location] == "Glasgow"
         @events = Event.where(location: "Glasgow").order(date_details: "ASC")
+      elsif params[:location] == "Manchester"
+        @events = Event.where(location: "Manchester").order(date_details: "ASC")
       elsif params[:location] == "Newcastle Upon Tyne"
         @events = Event.where(location: "Newcastle Upon Tyne").order(date_details: "ASC")
       # category
