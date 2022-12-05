@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   resources :events, only: [:show, :index ] do
     resources :favorites, only: [:index, :show, :new, :create, :destroy]
   end
+
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 end

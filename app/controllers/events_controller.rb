@@ -2,6 +2,28 @@ class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :show, :index ]
   def show
     @event = Event.find(params[:id])
+
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: [{
+        # Provide the exact Price ID (e.g. pr_1234) of the product you want to sell
+        price_data: {
+          currency: 'gbp',
+          unit_amount: (@event.price * 100).to_i,
+          product_data: {
+            name: 'Your order',
+            description: 'Event',
+            images: ['https://example.com/t-shirt.png'],
+          },
+        },
+        quantity: 1
+      }],
+      mode: 'payment',
+      success_url: 'http://localhost:3000/events',
+      cancel_url: 'http://localhost:3000/events'
+    )
+
+    @event.update(checkout_session_id: session.id)
   end
 
   def index
@@ -22,6 +44,8 @@ class EventsController < ApplicationController
         @events = Event.where(location: "London").order(date_details: "ASC")
       elsif params[:location] == "Glasgow"
         @events = Event.where(location: "Glasgow").order(date_details: "ASC")
+      elsif params[:location] == "Manchester"
+        @events = Event.where(location: "Manchester").order(date_details: "ASC")
       elsif params[:location] == "Newcastle Upon Tyne"
         @events = Event.where(location: "Newcastle Upon Tyne").order(date_details: "ASC")
       # category
@@ -44,5 +68,11 @@ class EventsController < ApplicationController
 
       end
     end
+  end
+
+  def purchase
+    @event = Event.find(params[:event_id])
+
+
   end
 end
