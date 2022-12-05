@@ -1,9 +1,12 @@
 <div class="img w-full">
   <div class="justify-items-center">
     <div>
-     <div class="relative">
-      <img src="https://rave.io/img/social_media_banner-6adf5bc26b.png" class="w-full"/>
+     <div class="home mb-4">
+      <%# <img src="https://i.ibb.co/GFJfcgp/social-media-banner-6adf5bc26b.jpg" class="w-full"/>
         <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+        </div> %>
+        <div class="flex justify-center mb-5">
+          <%= link_to "Explore All", events_path, class: "btn btn-wide text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-2 py-2.5 text-center mr-2 my-3 "%>
         </div>
       </div>
     </div>
@@ -33,9 +36,7 @@
   <% end %>
 <% end %>
 
-<div class="flex justify-center">
-  <%= link_to "Explore All", events_path, class: "btn btn-wide text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-2 py-2.5 text-center mr-2 my-3 "%>
-</div>
+
 
 <div class="container">
   <h1 class="text-5xl font-bold mt-0 mb-6 m">Trending Events 🔥</h1>
@@ -50,7 +51,7 @@
       <figure><img src=<%= event.image_url %> class="w-full h-50" /></figure>
       <div class="card-body">
         <% # Truncate function reduces the length of the name if its longer than 10 characters %>
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
         <div class="badge badge-secondary">NEW</div></h2>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
@@ -75,7 +76,7 @@
     <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-full h-50" /></figure>
       <div class="card-body">
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
 
@@ -101,7 +102,7 @@
     <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-full h-50" /></figure>
       <div class="card-body">
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
 
@@ -122,11 +123,13 @@
 
   <% jazz_events.each_with_index do |event, index| %>
     <% if index < 4 %>
+
    <%= link_to event_path(event.id), class: 'no-decoration' do %>
     <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-full h-50" /></figure>
       <div class="card-body inline-block">
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
+        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
+
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
 

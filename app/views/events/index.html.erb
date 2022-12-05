@@ -53,30 +53,36 @@
 
 
   <div class=<%= (params[:query].present? || params[:location].present? || params[:category].present?) ? "" : "hidden" %>>
-    <div class="container yeah">
-      <h1 class="text-4xl sticky font-bold mt-8 mb-8">Events you may like...</h1>
-      <div class="grid grid-cols-3">
+    <div class="container">
+      <h1 class="text-4xl sticky font-bold mt-8 mb-8">
+      <%  if params[:category]  %>
+      <p class="mt-6 text 6xl mb-10 "> <%= params[:category] %> events you may like...</p>
+      <% else %>
+      <p class="mt-6 text 6xl mb-10"> Events in <%= params[:location]%>...  </p>
+      <% end %>
 
+
+      <div class="grid grid-cols-1">
       <% if @events.empty? %>
-        <h1 class="mt-6">Sorry there are no results for this search... Please search for a city or event name 🤪 </h1>
+        <p class="mt-6 text 2xl">Sorry there are no results for.... <%= params[:query] %>...</p>
         <% end %>
+      </div>
 
+
+    <div class="grid grid-cols-3">
       <% @events.each do |event| %>
 
           <div class="card card-compact w-90 h-80 bg-base-100 shadow-xl mx-4 my-2">
             <figure><img src=<%= event.image_url %> class="w-full" /></figure>
             <div class="card-body">
-              <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
+              <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(30) %></a>
               <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
               <div class="card-actions justify-end">
                 <a href="<%= event.url %>" target="_blank"class="btn btn-primary">Buy £<%= event.price.round %></a>
               </div>
             </div>
           </div>
-
       <% end %>
     </div>
   </div>
 </div>
-
-<%# <% # genres = ["Alternative", "Hip Hop", "Country", "R&B", "Jazz", "Sports", "Pop", "Rock"] %>
