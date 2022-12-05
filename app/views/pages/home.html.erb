@@ -45,18 +45,19 @@
   <% trending_events.each_with_index do |event, index| %>
     <% if index < 4 %>
 
-    <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
-      <figure><img src=<%= event.image_url %> class="w-full" /></figure>
+    <%= link_to event_path(event.id), class: 'no-decoration' do %>
+    <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
+      <figure><img src=<%= event.image_url %> class="w-full h-50" /></figure>
       <div class="card-body">
         <% # Truncate function reduces the length of the name if its longer than 10 characters %>
         <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
         <div class="badge badge-secondary">NEW</div></h2>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
-
         </div>
       </div>
     </div>
+    <% end %>
 
     <% end %>
   <% end %>
@@ -70,9 +71,9 @@
 
   <% rnb_events.each_with_index do |event, index| %>
     <% if index < 4 %>
-
-    <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
-      <figure><img src=<%= event.image_url %> class="w-full" /></figure>
+   <%= link_to event_path(event.id), class: 'no-decoration' do %>
+    <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
+      <figure><img src=<%= event.image_url %> class="w-full h-50" /></figure>
       <div class="card-body">
         <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
@@ -82,6 +83,7 @@
       </div>
 
     </div>
+        <% end %>
 
     <% end %>
   <% end %>
@@ -95,9 +97,9 @@
 
   <% sports_events.each_with_index do |event, index| %>
     <% if index < 4 %>
-
-    <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
-      <figure><img src=<%= event.image_url %> class="w-full" /></figure>
+   <%= link_to event_path(event.id), class: 'no-decoration' do %>
+    <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
+      <figure><img src=<%= event.image_url %> class="w-full h-50" /></figure>
       <div class="card-body">
         <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
@@ -106,6 +108,7 @@
         </div>
       </div>
     </div>
+      <% end %>
 
     <% end %>
   <% end %>
@@ -119,10 +122,10 @@
 
   <% jazz_events.each_with_index do |event, index| %>
     <% if index < 4 %>
-
-    <div class="card card-compact w-96 h-60 bg-base-100 shadow-xl mx-4 my-2">
-      <figure><img src=<%= event.image_url %> class="w-full" /></figure>
-      <div class="card-body">
+   <%= link_to event_path(event.id), class: 'no-decoration' do %>
+    <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
+      <figure><img src=<%= event.image_url %> class="w-full h-50" /></figure>
+      <div class="card-body inline-block">
         <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(10) %></a>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
@@ -130,6 +133,7 @@
         </div>
       </div>
     </div>
+          <% end %>
 
     <% end %>
   <% end %>
