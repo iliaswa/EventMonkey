@@ -1,7 +1,7 @@
 <div class="container flex items-stretch p-3 yeah">
   <div class="card bg-base-100 shadow-l flex-col px-5 w-10/12 p-3 h-500">
-    <figure><img src=<%= @event.image_url %> class="w-full p-2 rounded-3xl "></figure>
-      <h2 class="card-title justify-center text-2xl pt-6 mt-5"><%= @event.name %></h2>
+    <figure><img src=<%= @event.image_url %> class="w-full p-2 rounded-3xl mt-4 "></figure>
+      <h2 class="card-title justify-center text-2xl mt-5 border-top border-bottom"><%= @event.name %></h2>
     <div class="card-body justify-center">
       <div class="bottom text-5xl d-flex justify-center space-x-10 flex items-stretch px-5">
       <i class="fa-solid fa-heart" data-modal-toggle="defaultModal"></i>
@@ -28,12 +28,12 @@
 
 
    <div class="container">
-    <div class="card-event w-96 bg-base-100 shadow-l flex-col px-5 w-full p-2">
-      <h1 class="card-title text-4xl border-bottom pt-3"><%= @event.name %></h1>
+    <div class="card-event w-96 bg-base-100 shadow-l flex-col px-4 w-full p-2">
+      <h1 class="card-title text-4xl border-bottom pt-5 pb-2"><%= @event.name %></h1>
       <h2 class="card-line py-2 text-3xl font-semibold"><%= @event.venue %></h2>
       <h2 class="card-line py-1 text-2xl font-medium"><%= @event.location %></h2>
 
-      <h3 class="card-line  text-2xl font-semibold"><%= @event.date_details.strftime("%d %B %Y")%>
+      <h3 class="card-line  text-2xl font-semibold border-bottom pb-2"><%= @event.date_details.strftime("%d %B %Y")%>
       <h3 class="card-line py-5 text-2xl font-semibold"><%= @event.date_details.strftime("%l:%M%P") %>
       <p class="card-line py-2 text-2xl font-semibold"><%= @event.category %></p>
       <p class="card-line py-2 text-2xl font-semibold"> <%= @event.price.round(3) %> GBP</p>
@@ -43,7 +43,7 @@
     </div>
   </div>
         <%# Geocode %>
-        <div class="mapbox" style="width: 140%; height: 500px; border: solid grey 1px; ml-50 rounded:xl"
+        <div class="mapbox" style="width: 140%; height: 500px; shadow-l"
           data-controller="map",
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
