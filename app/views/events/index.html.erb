@@ -56,9 +56,9 @@
     <div class="container">
       <h1 class="text-4xl sticky font-bold mt-8 mb-8">
       <%  if params[:category]  %>
-      <p class="mt-6 text 6xl mb-10"> <%= params[:category] %> events you may like...</p>
+      <p class="mt-6 text 6xl mb-3 "> <%= params[:category] %> events you may like...</p>
       <% else %>
-      <p class="mt-6 text 6xl mb-10"> Events in <%= params[:location]%>...  </p>
+      <p class="mt-6 text 6xl mb-3"> Events in <%= params[:location]%>...  </p>
       <% end %>
 
 
@@ -72,7 +72,7 @@
     <div class="grid grid-cols-3">
       <% @events.each do |event| %>
       <%= link_to event_path(event.id), class: 'no-decoration' do %>
-          <div class="card card-compact w-90 h-80 bg-base-100 shadow-xl mx-4 my-2">
+          <div class="card card-compact w-90 h-80 bg-base-100 shadow-xl mx-4 my-4">
             <figure><img src=<%= event.image_url %> class="w-full" /></figure>
             <div class="card-body">
               <h2 class="card-title"><%= event.name.truncate(30) %>

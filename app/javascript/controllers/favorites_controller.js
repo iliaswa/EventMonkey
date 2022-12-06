@@ -9,6 +9,7 @@ export default class extends Controller {
   update() {
     console.log(this.favoriteTarget)
     this.favoriteTarget.setAttribute("disabled", "")
+
     // console.log(this.formTarget)
 
     fetch(this.formTarget.action, {

@@ -10,4 +10,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :handle, presence: true
 
+  def favorite_event?(event)
+    self.favorites.find_by(event: event).present?
+  end
 end
