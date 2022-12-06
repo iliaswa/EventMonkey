@@ -1,0 +1,24 @@
+<div>
+  <div class="container yeah">
+    <h1 class="text-4xl sticky font-bold mt-8 mb-8">
+    <p class="mt-6 text 6xl mb-10 "> Your ticket history...</p>
+
+
+
+
+    <div class="grid grid-cols-3">
+      <% @orders.each do |order| %>
+        <div class="card card-compact w-90 h-80 bg-base-100 shadow-xl mx-4 my-2">
+          <figure><img src=<%= order.event.image_url %> class="w-full" /></figure>
+          <div class="card-body">
+            <h2 class="card-title"><%= order.event.name.truncate(30) %>
+            <h3><%= order.event.location %> <%= order.event.date_details.day%>/<%= order.event.date_details.month%></h3>
+            <div class="card-actions justify-end">
+              <h2 class="btn btn-primary">£<%= order.event.price.round %></h2>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :groups
   has_many :events, through: :favorites
+  has_many :orders
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :handle, presence: true
