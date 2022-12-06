@@ -1,6 +1,6 @@
 <div class="container flex items-stretch p-3">
   <div class="card card-compact w-96 bg-base-100 shadow-l flex justify-center w-half h-full">
-    <figure><img src=<%= @event.image_url %> class="w-full p-3 rounded-3xl"></figure>
+    <figure><img src=<%= @event.image_url %> class="w-full p-3 rounded-3xl "></figure>
     <div class="card-body justify-center">
       <h2 class="card-title text-2xl mb-2 text-center"><%= @event.name %></h2>
       <div class="bottom text-5xl d-flex justify-center space-x-4 flex items-stretch">
@@ -42,14 +42,14 @@
       </div>
     </div>
   </div>
-  </div>
-</div>
         <%# Geocode %>
-        <div style="width: 75%; height: 400px; border: solid grey 2px; ml-50;"
+        <div style="width: 80%; height: 400px; border: solid grey 2px; ml-50;"
           data-controller="map",
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
+  </div>
+</div>
 
 
   <!-- Main modal -->
