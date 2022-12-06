@@ -5,7 +5,7 @@
 
       <div class="w-full md:w-3/12 md:mx-2">
           <!-- Profile Card -->
-          <div class="bg-white p-3 border-t-4 border-purple-400 gird gird-cols-2">
+          <div class="bg-white p-3 border-t-4 border-purple-400 gird gird-cols-2 h-72">
               <div class="image overflow-hidden"></div>
 
               <h1 class="text-gray-900 font-bold text-xl leading-8 my-1 text-center"><%= current_user.first_name %></h1>
@@ -37,46 +37,24 @@
                   </span>
                   <span>Favorite Events
                   <% @favorited_events.each do |event| %>
-                    <h1 class="card-title text-4xl border-bottom"><%= event.name %></h1>
-                    <h2 class="card-line py-2 text-3xl font-semibold"><%= event.venue %></h2>
-                    <h2 class="card-line py-1 text-2xl font-medium"><%= event.location %></h2>
 
-                    <h3 class="card-line  text-2xl font-semibold"><%= event.date_details.strftime("%d %B %Y")%>
-                    <h3 class="card-line py-5 text-2xl font-semibold"><%= event.date_details.strftime("%l:%M%P") %>
-                    <p class="card-line py-2 text-2xl font-semibold"><%= event.category %></p>
-                    <p class="card-line py-2 text-2xl font-semibold"> <%= event.price.round(3) %> GBP</p>
+                   <div class="text-center my-2">
+                      <img class="h-16 w-16 rounded-full mx-auto"
+                          src= <%=event.image_url%> >
+                      <a href="#" class="text-main-color"><%= event.name %></a>
+                  </div>
                   <% end %>
                   <%# <%= render "events/card", event: event %>
                   </span>
-              </div>
-              <div class="grid grid-cols-3">
-                  <div class="text-center my-2">
-                      <img class="h-16 w-16 rounded-full mx-auto"
-                          src="https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fG11c2ljJTIwZXZlbnR8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-                          alt="">
-                      <a href="#" class="text-main-color">Enzo</a>
-                  </div>
-                  <div class="text-center my-2">
-                      <img class="h-16 w-16 rounded-full mx-auto"
-                          src="https://plus.unsplash.com/premium_photo-1663047192589-dacd18636fea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-                          alt="">
-                      <a href="#" class="text-main-color">Runte</a>
-                  </div>
-                  <div class="text-center my-2">
-                      <img class="h-16 w-16 rounded-full mx-auto"
-                          src="https://s1.ticketm.net/dam/a/e20/c6adf92b-cc91-4e88-978e-e119abcdce20_1060261_CUSTOM.jpg"
-                          alt="">
-                      <a href="#" class="text-main-color">Murder C...</a>
-                  </div>
               </div>
           </div>
                 <!-- End of friends card -->
             </div>
             <!-- Right Side -->
-            <div class="w-full md:w-9/12 mx-2 h-64">
+            <div class="w-full md:w-9/12 mx-2 h-72">
                 <!-- Profile tab -->
                 <!-- About Section -->
-            <div class="bg-white p-3 shadow-sm rounded-sm">
+            <div class="bg-white p-3 shadow-sm rounded-sm h-100">
                     <div class="flex items-center space-x-2 font-semibold text-gray-900 leading-8">
                         <span clas="text-green-500">
                             <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -130,5 +108,7 @@
                 <!-- End of profile tab -->
             </div>
         </div>
+
+
     </div>
 </div>
