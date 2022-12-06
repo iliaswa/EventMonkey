@@ -42,6 +42,9 @@
         <li><%= link_to events_path(location: "Birmingham") do %>
       <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i> Birmingham</li><%end%>
 
+        <li><%= link_to events_path(location: "Edinburgh") do %>
+      <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i> Edinburgh</li><%end%>
+
         <li><%= link_to events_path(location: "Glasgow") do %>
       <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i>Glasgow</li><%end%>
 
