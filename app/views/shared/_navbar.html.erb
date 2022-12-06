@@ -107,11 +107,11 @@
 
 
     <%# Profile dropdown start %>
-        <div class="form-control p-0.5 rounded-box">
+        <div class="form-control p-0">
         <%= form_with url: events_path, method: :get, class: "d-flex" do %>
   <%= text_field_tag :query,
     params[:query],
-    class: "input input-bordered",
+    class: "input input-bordered border-rounded",
     placeholder: "Find event..."
   %>
   <% end %>
