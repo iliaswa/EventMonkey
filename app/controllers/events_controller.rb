@@ -24,6 +24,12 @@ class EventsController < ApplicationController
     )
 
     @event.update(checkout_session_id: session.id)
+
+    @event = Event.find(params[:id])
+    # The `geocoded` scope filters only flats with coordinates
+    @markers_new = @event.geocode
+    @markers = { lat: @markers_new[0], lng: @markers_new[1]}
+
   end
 
   def index
