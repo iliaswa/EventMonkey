@@ -13,14 +13,13 @@ class EventsController < ApplicationController
           product_data: {
             name: 'Your order',
             description: 'Event',
-            images: ['https://example.com/t-shirt.png'],
           },
         },
         quantity: 1
       }],
       mode: 'payment',
-      success_url: 'http://localhost:3000/events',
-      cancel_url: 'http://localhost:3000/events'
+      success_url: "http://localhost:3000/events/#{@event.id}/confirm_order",
+      cancel_url: "http://localhost:3000/events"
     )
 
     @event.update(checkout_session_id: session.id)
