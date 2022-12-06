@@ -8,9 +8,14 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index ] do
     resources :groups, only: [:show, :new, :create, :destroy ]
   end
+
   resources :events, only: [:show, :index ] do
-    resources :favorites, only: [:index, :show, :new, :create, :destroy]
   end
+
+  resources :favorites, only: [:index, :show, :new, :create, :destroy] do
+  end
+
+  get "events/:id/add_favorites", to: "favorites#add_favorites", as: :add_favorites
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new

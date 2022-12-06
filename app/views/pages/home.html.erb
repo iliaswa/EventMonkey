@@ -39,7 +39,7 @@
 
 
 <div class="container">
-  <h1 class="text-5xl font-bold mt-0 mb-6 m">Trending Events 🔥</h1>
+  <h1 class="text-5xl font-bold mt-0 mb-6 mx-3 pl-1">Trending Events 🔥</h1>
   <div class="flex flex-row">
 
   <% # Used index to only show first four results %>
@@ -47,11 +47,11 @@
     <% if index < 4 %>
 
     <%= link_to event_path(event.id), class: 'no-decoration' do %>
-    <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
+    <div class="card card-compact w-70 h-70 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-screen h-40 rounded-t-xl" /></figure>
       <div class="card-body">
         <% # Truncate function reduces the length of the name if its longer than 10 characters %>
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
+        <h2 class="card-title"><%= event.name.truncate(15) %>
         <div class="badge badge-secondary">NEW</div></h2>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
@@ -67,16 +67,16 @@
 </div>
 
 <div class="container">
-  <h1 class="text-5xl font-bold mt-4 mb-6 m">RnB Events</h1>
+  <h1 class="text-5xl font-bold mt-4 mb-6 mx-3 pl-2">RnB Events</h1>
   <div class="flex flex-row">
 
   <% rnb_events.each_with_index do |event, index| %>
     <% if index < 4 %>
    <%= link_to event_path(event.id), class: 'no-decoration' do %>
-    <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
+    <div class="card card-compact w-70 h-70 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-screen h-40 rounded-t-xl" /></figure>
       <div class="card-body">
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
+        <h2 class="card-title"><%= event.name.truncate(15) %>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
 
@@ -93,16 +93,16 @@
 </div>
 
 <div class="container">
-  <h1 class="text-5xl font-bold mt-4 mb-6 m">Sports Events</h1>
+  <h1 class="text-5xl font-bold mt-4 mb-6 mx-3 pl-2">Sports Events</h1>
   <div class="flex flex-row">
 
   <% sports_events.each_with_index do |event, index| %>
     <% if index < 4 %>
    <%= link_to event_path(event.id), class: 'no-decoration' do %>
-    <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
+    <div class="card card-compact w-70 h-70 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-screen h-40 rounded-t-xl" /></figure>
       <div class="card-body">
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
+        <h2 class="card-title"><%= event.name.truncate(15) %>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
 
@@ -118,17 +118,16 @@
 </div>
 
 <div class="container">
-  <h1 class="text-5xl font-bold mt-4 mb-6 m">Jazz Events</h1>
+  <h1 class="text-5xl font-bold mt-4 mb-6 mx-3 pl-3">Jazz Events</h1>
   <div class="flex flex-row">
 
   <% jazz_events.each_with_index do |event, index| %>
     <% if index < 4 %>
    <%= link_to event_path(event.id), class: 'no-decoration' do %>
-    <div class="card card-compact w-96 h-70 bg-base-100 shadow-xl mx-4 my-2">
+    <div class="card card-compact w-70 h-70 bg-base-100 shadow-xl mx-4 my-2">
       <figure><img src=<%= event.image_url %> class="w-screen h-40 rounded-t-xl" /></figure>
       <div class="card-body">
-        <a href="/events/<%= event.id.to_s %>"><h2 class="card-title"><%= event.name.truncate(15) %></a>
-
+        <h2 class="card-title"><%= event.name.truncate(15) %>
         <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
         <div class="card-actions justify-end">
 
