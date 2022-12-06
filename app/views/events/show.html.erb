@@ -4,8 +4,14 @@
       <h2 class="card-title justify-center text-2xl pt-6"><%= @event.name %></h2>
     <div class="card-body justify-center">
       <div class="bottom text-5xl d-flex justify-center space-x-10 flex items-stretch px-5">
-      <i class="fa-solid fa-heart" data-modal-toggle="defaultModal"></i>
 
+      <%# if @event.updated_at.strftime("%k%s").to_i <= Time.now.strftime("%k%s").to_i && @event.updated_at.strftime("%k%s").to_i  >= (Time.now.strftime("%k%s").to_i) - 5 %>
+      <%# raise %>
+      <% if current_user.favorite_event?(@event) %>
+        <i class="fa fa-heart" data-modal-toggle="defaultModal" style='color: red'></i>
+      <% else %>
+        <i class="fa-solid fa-heart" data-modal-toggle="defaultModal"></i>
+      <% end %>
       <button class='btn btn-primary', id="pay">Purchase</button>
       </div>
 
