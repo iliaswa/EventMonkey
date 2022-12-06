@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   get "events/:id/add_favorites", to: "favorites#add_favorites", as: :add_favorites
+  get "my_tickets"
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
