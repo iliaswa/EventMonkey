@@ -18,8 +18,9 @@ class EventsController < ApplicationController
         quantity: 1
       }],
       mode: 'payment',
-      success_url: "http://localhost:3000/events/#{@event.id}/confirm_order",
-      cancel_url: "http://localhost:3000/events"
+      # success_url: "http://localhost:3000/events/#{@event.id}/confirm_order",
+      success_url: confirm_order_url(@event),
+      cancel_url: failed_order_url(@event)
     )
 
     @event.update(checkout_session_id: session.id)

@@ -1,4 +1,4 @@
-<div class="container flex items-stretch p-3 yeah">
+<div class="container flex items-stretch py-20 yeah">
   <div class="card bg-base-100 shadow-l flex-col px-5 w-10/12 p-3 h-500">
     <figure><img src=<%= @event.image_url %> class="w-full p-2 rounded-3xl mt-4 "></figure>
       <h2 class="card-title justify-center text-2xl mt-5 border-top border-bottom"><%= @event.name %></h2>
@@ -42,9 +42,9 @@
       <h2 class="card-line py-1 text-2xl font-medium"><%= @event.location %></h2>
 
       <h3 class="card-line  text-2xl font-semibold border-bottom pb-2"><%= @event.date_details.strftime("%d %B %Y")%>
-      <h3 class="card-line py-5 text-2xl font-semibold"><%= @event.date_details.strftime("%l:%M%P") %>
-      <p class="card-line py-2 text-2xl font-semibold"><%= @event.category %></p>
-      <p class="card-line py-2 text-2xl font-semibold"> <%= @event.price.round(3) %> GBP</p>
+      <h3 class="card-line py-5 text-2xl font-semibold"><i class="fa-regular fa-clock"></i> <%= @event.date_details.strftime("%l:%M%P") %>
+      <p class="card-line py-2 text-2xl font-semibold"><i class="fa-solid fa-ticket"></i> <%= @event.category %></p>
+      <p class="card-line py-2 text-2xl font-semibold"><i class="fa-solid fa-sterling-sign"></i><%= @event.price.round(3) %></p>
 
       <div class="card-actions justify-end">
       </div>
@@ -84,9 +84,9 @@
               <!-- Modal footer -->
               <div class="d-flex justify-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
                   <%= link_to add_favorites_path(@event) do %>
-                    <button data-favorites-target="favorite" data-action="click->favorites#update" class="btn btn-primary hover:bg-blue-700 text-white">Confirm</button>
+                    <button data-favorites-target="favorite" data-action="click->favorites#update" class="btn btn-primary text-white">Yes</button>
                   <% end %>
-                  <button data-modal-toggle="defaultModal" class="btn text-white">Decline</button>
+                  <button data-modal-toggle="defaultModal" class="btn text-white">No</button>
               </div>
           </div>
       </div>

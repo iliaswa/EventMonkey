@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get "events/:id/add_favorites", to: "favorites#add_favorites", as: :add_favorites
   get "events/:id/confirm_order", to: "orders#confirm_order", as: :confirm_order
+  get "events/:id/failed_order", to: "orders#failed_order", as: :failed_order
   get "my_orders", to: "orders#my_orders", as: :my_orders
 
   resources :orders, only: [:show, :create] do
