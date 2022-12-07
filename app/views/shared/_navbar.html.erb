@@ -106,15 +106,15 @@
       <%# Music Drop down button %>
 
 
-    <%# Profile dropdown start %>
         <div class="form-control p-0">
         <%= form_with url: events_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "input input-bordered border-rounded",
-    placeholder: "Find event..."
-  %>
-  <% end %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "input input-bordered border-2 border-rounded border-purple-500 animate-pulse",
+          placeholder: "Find event..."
+        %>
+        <% end %>
+    <%# Profile dropdown start %>
 
       <%# <input type="text" placeholder="Find Event..." class="input input-bordered" /> %>
     </div>
