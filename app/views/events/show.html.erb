@@ -1,4 +1,4 @@
-<div class="container flex items-stretch p-3 yeah">
+<div class="container flex items-stretch py-20 yeah">
   <div class="card bg-base-100 shadow-l flex-col px-5 w-10/12 p-3 h-500">
     <figure><img src=<%= @event.image_url %> class="w-full p-2 rounded-3xl mt-4 "></figure>
       <h2 class="card-title justify-center text-2xl mt-5 border-top border-bottom"><%= @event.name %></h2>
@@ -84,9 +84,9 @@
               <!-- Modal footer -->
               <div class="d-flex justify-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
                   <%= link_to add_favorites_path(@event) do %>
-                    <button data-favorites-target="favorite" data-action="click->favorites#update" class="btn bg-blue-500 hover:bg-blue-700 text-white">Confirm</button>
+                    <button data-favorites-target="favorite" data-action="click->favorites#update" class="btn btn-primary text-white">Yes</button>
                   <% end %>
-                  <button data-modal-toggle="defaultModal" class="btn text-white">Decline</button>
+                  <button data-modal-toggle="defaultModal" class="btn text-white">No</button>
               </div>
           </div>
       </div>
