@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html data-theme="light">
   <head>
-    <title>EventMonkey</title>
+    <title>Event Monkey is the ultimate event finding app. Find any event, anywhere, today!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +10,24 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <!-- Facebook Open Graph data -->
+    <meta property="og:title" content="EventMonkey is the ultimate event finding app. Find any event, anywhere, today!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="https://i.ibb.co/hBRtKWd/Screen-Shot-2022-12-08-at-3-01-31-PM.png" />
+    <meta property="og:description" content="EventMonkey is the ultimate event finding app. Find any event, anywhere, today!" />
+    <meta property="og:site_name" content="EventMonkey" />
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="EventMonkey">
+    <meta name="twitter:description" content="EventMonkey is the ultimate event finding app. Find any event, anywhere, today!">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image:src" content="https://i.ibb.co/hBRtKWd/Screen-Shot-2022-12-08-at-3-01-31-PM.png">
+
+
     <% # These lines below are for DaisyUI which is a Tailwind CSS component library%>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.42.1/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
