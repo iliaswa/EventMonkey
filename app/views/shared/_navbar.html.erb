@@ -15,18 +15,28 @@
 
   <%# <%= filter button start  %>
   <div class="flex-none gap-2">
-   <p class="text-2xl" data-tooltip="category">
-    <% link_to events_path(category: "Jazz") do %>
-      <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i>
+    <p class="text-2xl" data-tooltip="category">
+      <% link_to events_path(category: "Jazz") do %>
+        <i class="fa-solid fa-music <%= "selected" if params[:category] %>" id="local"></i>
       <% end %>
-
-       <p class="text-3xl" data-tooltip="location">
-    <% link_to events_path(location: "London") do %>
-      <i class="fas fa-circle <%= "selected" if params[:location] %>" id="local"></i>
+    </p>
+    <p class="text-3xl" data-tooltip="location">
+      <% link_to events_path(location: "London") do %>
+        <i class="fas fa-circle <%= "selected" if params[:location] %>" id="local"></i>
       <% end %>
- <%# <%= filter button end  %>
+      <%# <%= filter button end  %>
+    </p>
 
 
+    <div class="form-control p-0">
+      <%= form_with url: events_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "input input-bordered border-2 border-rounded border-purple-500 animate-pulse",
+          placeholder: "Find event..."
+        %>
+      <% end %>
+    </div>
    <%# Location button start %>
     <div class="dropdown dropdown-end">
       <label tabindex="0" class="btn btn-ghost">
@@ -67,12 +77,11 @@
     </div>
     <%# location button end %>
 
-
     <%# Music Drop down button start %>
     <div class="dropdown dropdown-end">
           <label tabindex="0" class="btn btn-ghost">
             <div class="text-2xl">
-            <i class="fa-solid fa-filter"></i>
+              <i class="fa-solid fa-filter"></i>
             </div>
           </label>
           <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -102,23 +111,14 @@
           <i class="fa-solid fa-trophy <%= "selected" if params[:category] %>" id="local"></i> Sports</li><%end%>
 
           </ul>
-        </div>
+    </div>
       <%# Music Drop down button %>
 
 
-        <div class="form-control p-0">
-        <%= form_with url: events_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "input input-bordered border-2 border-rounded border-purple-500 animate-pulse",
-          placeholder: "Find event..."
-        %>
-        <% end %>
+
+
     <%# Profile dropdown start %>
-
       <%# <input type="text" placeholder="Find Event..." class="input input-bordered" /> %>
-    </div>
-
     <div class="dropdown dropdown-end">
       <label tabindex="0" class="btn btn-ghost btn-circle avatar">
         <div class="w-10 rounded-full">

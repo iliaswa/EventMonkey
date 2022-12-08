@@ -1,23 +1,23 @@
 <div class="container mx-auto my-3 p-3 yeah">
-  <div class="profile mx-auto text-center text-2xl font-semibold my-3 ">Your profile </div>
+  <div class="text-4xl font-bold mt-4 text-center mb-10 text-[#570DF8]">Your profile</div>
   <div class="md:flex no-wrap md:-mx-2 ">
     <!-- Left Side -->
     <div class="w-full md:w-3/12 md:mx-2">
       <!-- Profile Card -->
-      <div class="bg-white p-3 border-t-4 border-purple-400 gird gird-cols-2 h-80">
+      <div class="bg-white p-3 border-t-4 border-[#570DF8]/75 gird gird-cols-2 h-80">
         <div class="image overflow-hidden"></div>
 
-        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1 text-center"><%= current_user.first_name %></h1>
+        <h1 class="font-bold text-xl leading-8 my-1 text-[#570DF8] text-center"><%= current_user.first_name %></h1>
         <img class="h-16 w-16 rounded-full mx-auto" src="https://i.ibb.co/SByn8Gx/Screen-Shot-2022-12-02-at-12-05-29-PM.png">
         <ul
-            class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
+            class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 rounded shadow-sm">
             <li class="flex items-center py-3">
-                <span>Status</span>
+                <span class="text-lg">Status</span>
                 <span class="ml-auto"><span
-                        class="bg-purple-500 py-1 px-2 rounded text-white text-sm">Active</span></span>
+                        class="bg-[#570DF8] py-1 px-2 rounded text-white text-sm">Active</span></span>
             </li>
             <li class="flex items-center py-3">
-                <span>Member since</span>
+                <span class="text-lg">Member since</span>
                 <span class="ml-auto">Nov 29, 2022</span>
             </li>
         </ul>
@@ -40,36 +40,36 @@
                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
           </span>
-          <span class="tracking-wide">About</span>
+          <span class="tracking-wide text-lg ">About</span>
         </div>
         <div class="text-gray-700">
           <div class="grid md:grid-cols-2 text-sm">
               <div class="grid grid-cols-2">
-                  <div class="px-4 py-2 font-semibold">First Name:</div>
-                  <div class="px-4 py-2"> <%= current_user.first_name %></div>
+                  <div class="px-4 py-2 text-lg font-semibold">First Name:</div>
+                  <div class="px-4 py-2 text-lg"> <%= current_user.first_name %></div>
               </div>
               <div class="grid grid-cols-2">
-                  <div class="px-4 py-2 font-semibold">Last Name:</div>
-                  <div class="px-4 py-2"><%= current_user.last_name %></div>
+                  <div class="px-4 py-2 font-semibold text-lg">Last Name:</div>
+                  <div class="px-4 py-2 text-lg"><%= current_user.last_name %></div>
               </div>
               <div class="grid grid-cols-2">
-                  <div class="px-4 py-2 font-semibold">Handle:</div>
-                  <div class="px-4 py-2">@<%= current_user.handle %></div>
+                  <div class="px-4 py-2 font-semibold text-lg">Handle:</div>
+                  <div class="px-4 py-2 text-lg">@<%= current_user.handle %></div>
               </div>
                 <div class="grid grid-cols-2">
-                  <div class="px-4 py-2 font-semibold">Birthday:</div>
-                  <div class="px-4 py-2">Feb 06, 1998</div>
+                  <div class="px-4 py-2 font-semibold text-lg">Birthday:</div>
+                  <div class="px-4 py-2 text-lg">Feb 06, 1998</div>
               </div>
               </div>
               <div class="grid grid-cols-4">
-                  <div class="px-4 py-4 font-semibold">Email:</div>
-                  <div class="px-4 py-4">
+                  <div class="px-4 py-4 font-semibold text-lg">Email:</div>
+                  <div class="px-4 py-4 text-lg">
                       <a class="text-blue-800" href="mailto:"#{current_user.email}><%= current_user.email %></a>
                   </div>
               </div>
               <div class="grid grid-cols-4">
-                  <div class="px-4 py-2 font-semibold">Contact No:</div>
-                  <div class="px-4 py-2">+44 7967961658</div>
+                  <div class="px-4 py-2 font-semibold text-lg">Contact No:</div>
+                  <div class="px-4 py-2 text-lg">+44 7967961658</div>
               </div>
           </div>
         </div>
@@ -84,12 +84,12 @@
   <!-- End of profile tab -->
 
   <div class="bg-white p-3 hover:shadow shadow-sm rounded-sm">
-    <h1 class="text-center text-4xl font-bold">Favorite Events</h1>
+  <div class="text-4xl font-bold mt-4 text-center mb-10 text-[#570DF8]">Favorites</div>
     <div class="flex items-center justify-center space-x-3 text-gray-900 text-xl leading-8">
       <% @favorited_events.each do |event| %>
         <div class="text-center my-2">
             <img class="h-16 w-16 rounded-full mx-auto" src=<%= event.image_url %> />
-            <span class="text-base"><%= event.name.truncate(20) %></span>
+            <span class="text-base"><%= event.name.truncate(20, separator: ' ') %></span>
         </div>
       <% end %>
     </div>
