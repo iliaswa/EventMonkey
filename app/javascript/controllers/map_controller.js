@@ -17,17 +17,18 @@ export default class extends Controller {
 
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+
   }
   //here
   #addMarkersToMap() {
-      new mapboxgl.Marker()
-        .setLngLat([ this.markersValue.lng, this.markersValue.lat ])
-        .addTo(this.map)
+    new mapboxgl.Marker({"color": "#570DF8"})
+    .setLngLat([ this.markersValue.lng, this.markersValue.lat ])
+    .addTo(this.map)
   }
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     bounds.extend([ this.markersValue.lng, this.markersValue.lat ])
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 14, duration: 9000 })
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 14, duration: 3000 })
   }
 }
