@@ -51,7 +51,7 @@
     </div>
   </div>
         <%# Geocode %>
-        <div class="mapbox" style="width: 140%; height: 500px; shadow-l"
+        <div class="mapbox border-gray-300" style="width: 140%; height: 500px; shadow-l"
           data-controller="map",
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
