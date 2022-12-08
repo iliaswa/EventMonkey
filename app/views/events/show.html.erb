@@ -44,7 +44,7 @@
       <h3 class="card-line  text-2xl font-semibold border-bottom pb-2"><%= @event.date_details.strftime("%d %B %Y")%>
       <h3 class="card-line py-5 text-2xl font-semibold"><i class="fa-regular fa-clock"></i> <%= @event.date_details.strftime("%l:%M%P") %>
       <p class="card-line py-2 text-2xl font-semibold"><i class="fa-solid fa-ticket"></i> <%= @event.category %></p>
-      <p class="card-line py-2 text-2xl font-semibold"><i class="fa-solid fa-sterling-sign"></i><%= @event.price.round(3) %></p>
+      <p class="card-line py-2 text-2xl font-semibold"><i class="fa-solid fa-sterling-sign"></i><%= '%.2f' % @event.price %></p>
 
       <div class="card-actions justify-end">
       </div>
