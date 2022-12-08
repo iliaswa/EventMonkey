@@ -4,7 +4,7 @@
   <div class=<%= (params[:query].present? || params[:location].present? || params[:category].present?) ? "hidden" : "" %>>
     <h1 class="text-5xl font-bold mt-4">All Events</h1>
 
-    <div class="grid grid-cols-4 gap-4 mb-[5rem]">
+    <div class="grid grid-cols-4 gap-4 mb-[5rem]" >
 
       <a href="/events?category=Alternative" target="_blank" class="card w-4/5 h-1/5 bg-base-100 image-full mt-5 hover:contrast-75" id="no-tint">
         <figure><img src="https://f4.bcbits.com/img/0022450678_0" class="" /></figure>
