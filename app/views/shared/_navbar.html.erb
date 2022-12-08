@@ -1,13 +1,13 @@
 <div class="navbar bg-base-100 sticky top-0 z-50" id="navstick">
   <div class="flex items-center">
     <%= link_to root_path do %>
-      <button class="btn btn-ghost normal-case text-xl">EventMonkey</button>
+      <button class="hover:text-[#570DF8] btn btn-ghost normal-case text-xl">EventMonkey</button>
     <% end %>
   </div>
   <%# Monkey icon %>
   <%= link_to root_path do %>
-      <button class="btn-ghost rounded w-14 ml-60">
-          <img src="https://thumbs.dreamstime.com/b/silhouette-monkey-animal-genus-primates-vector-illustrator-163854286.jpg" />
+      <button class="rounded w-14 ml-60 scale-100 hover:scale-105">
+          <img class="" src="https://thumbs.dreamstime.com/b/silhouette-monkey-animal-genus-primates-vector-illustrator-163854286.jpg" />
         </button>
   <% end %>
 
@@ -32,19 +32,19 @@
       <%= form_with url: events_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "input input-bordered border-2 border-rounded border-purple-500 animate-pulse",
+          class: "input input-bordered border-2 border-rounded border-purple-700 animate-pulse",
           placeholder: "Find event..."
         %>
       <% end %>
     </div>
    <%# Location button start %>
     <div class="dropdown dropdown-end">
-      <label tabindex="0" class="btn btn-ghost">
-        <div class="text-2xl">
+      <label tabindex="0" class="btn btn-ghost hover:text-[#570DF8]">
+        <div class="text-2xl hover:text-[#570DF8]">
         <i class="fa-solid fa-location-dot"></i>
         </div>
       </label>
-      <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+      <ul tabindex="0" class="mt-3 p-2 menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
 
         <li><%= link_to events_path(location: "Belfast") do %>
       <i class="fa-solid fa-location-dot <%= "selected" if params[:location] %>" id="local"></i> Belfast</li><%end%>
@@ -80,7 +80,7 @@
     <%# Music Drop down button start %>
     <div class="dropdown dropdown-end">
           <label tabindex="0" class="btn btn-ghost">
-            <div class="text-2xl">
+            <div class="text-2xl hover:text-[#570DF8]">
               <i class="fa-solid fa-filter"></i>
             </div>
           </label>
@@ -121,7 +121,7 @@
       <%# <input type="text" placeholder="Find Event..." class="input input-bordered" /> %>
     <div class="dropdown dropdown-end">
       <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-        <div class="w-10 rounded-full">
+        <div class="w-10 rounded-full hover:text-[#570DF8]">
           <img src="https://variety.com/wp-content/uploads/2021/09/Drake-publicity2-2021.jpg" />
         </div>
       </label>
