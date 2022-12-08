@@ -71,19 +71,25 @@
 
     <div class="grid grid-cols-3">
       <% @events.each do |event| %>
-      <%= link_to event_path(event.id), class: 'no-decoration' do %>
-          <div class="card card-compact w-90 h-80 bg-base-100 shadow-xl mx-4 my-4" data-aos="fade-up"
-     data-aos-duration="1000">
-            <figure><img src=<%= event.image_url %> class="w-full" /></figure>
-            <div class="card-body">
-              <h2 class="card-title"><%= event.name.truncate(30) %>
-              <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
-              <div class="card-actions justify-end">
-                <h2 class="btn btn-primary">£<%= event.price.round %></h2>
+      <% if event.date_details.to_date > Date.yesterday %>
+        <%= link_to event_path(event.id), class: 'no-decoration' do %>
+            <div class="card card-compact w-90 h-80 bg-base-100 shadow-xl mx-4 my-4" data-aos="fade-up"
+      data-aos-duration="1000">
+              <figure><img src=<%= event.image_url %> class="w-full" /></figure>
+              <div class="card-body">
+                <h2 class="card-title"><%= event.name.truncate(25) %>
+                <% if event.date_details.today? == true %>
+                <div class="badge badge-secondary">TODAY</div></h2>
+                <% else %>
+                <% end %>
+                <h3><%= event.location %> <%= event.date_details.day%>/<%= event.date_details.month%></h3>
+                <div class="card-actions justify-end">
+                  <h2 class="btn btn-primary">£<%= event.price.round %></h2>
+                </div>
               </div>
             </div>
-          </div>
-           <% end %>
+            <% end %>
+          <% end %>
       <% end %>
     </div>
   </div>
