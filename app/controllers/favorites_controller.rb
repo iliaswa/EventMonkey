@@ -1,6 +1,7 @@
 class FavoritesController < ApplicationController
   before_action :set_favorite, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:new, :create, :show, :index]
+  skip_before_action :authenticate_user!, only: [ :show, :index, :new]
 
   def index
     @events = []

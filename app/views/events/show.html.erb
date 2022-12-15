@@ -7,12 +7,25 @@
 
       <%# if @event.updated_at.strftime("%k%s").to_i <= Time.now.strftime("%k%s").to_i && @event.updated_at.strftime("%k%s").to_i  >= (Time.now.strftime("%k%s").to_i) - 5 %>
       <%# raise %>
-      <% if current_user.favorite_event?(@event) %>
-        <i class="fa fa-heart" data-modal-toggle="defaultModal" style='color: red'></i>
+      <% if user_signed_in? == false %>
+          <%= link_to new_user_registration_path do %>
+          <i class="fa-solid fa-heart" ></i>
+          <% end %>
       <% else %>
-        <i class="fa-solid fa-heart" data-modal-toggle="defaultModal"></i>
+        <% if current_user.favorite_event?(@event) %>
+            <i class="fa fa-heart" data-modal-toggle="defaultModal" style='color: red'></i>
+          <% else %>
+            <i class="fa-solid fa-heart" data-modal-toggle="defaultModal"></i>
+        <% end %>
       <% end %>
-      <button class='btn btn-primary', id="pay">Purchase</button>
+
+      <% if user_signed_in? == false %>
+        <%= link_to new_user_registration_path do %>
+        <button class='btn btn-primary' >Purchase</button>
+        <% end %>
+      <% else %>
+        <button class='btn btn-primary', id="pay">Purchase</button>
+      <% end %>
       </div>
 
       <script src="https://js.stripe.com/v3/"></script>

@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :show, :index ]
+  before_action :set_user, only: [:new, :create, :show, :index]
   def show
     @event = Event.find(params[:id])
 
@@ -90,6 +91,10 @@ class EventsController < ApplicationController
   end
 
   #create join table between events and users (can call purchased events)
+  private
 
+  def set_user
+    @user = current_user
+  end
 
 end
