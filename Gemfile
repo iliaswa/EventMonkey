@@ -31,6 +31,8 @@ gem "pg_search"
 
 gem "geocoder"
 
+gem "whenever"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 gem "stripe"
