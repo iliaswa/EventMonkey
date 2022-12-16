@@ -87,7 +87,6 @@ class EventsController < ApplicationController
 
   def purchase
     @event = Event.find(params[:event_id])
-
   end
 
   #create join table between events and users (can call purchased events)
@@ -96,5 +95,4 @@ class EventsController < ApplicationController
   def set_user
     @user = current_user
   end
-
 end
