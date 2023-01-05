@@ -57,7 +57,7 @@
 
 // // or
 
-// const sqaure = x => x * x
+// const sqaure  = x => x * x
 
 // console.log(square(10))
 
